@@ -4,7 +4,6 @@ class CreateProperties < ActiveRecord::Migration
       t.string :property_type
       t.string :title
       t.text :description
-      t.text :details
       t.string :bedrooms
       t.string :bathrooms
       t.string :square_feet
