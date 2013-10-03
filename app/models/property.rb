@@ -3,7 +3,7 @@ class Property < ActiveRecord::Base
 	has_one :location
 	has_many :details
 
-	def how_similar property
+	def how_similar? property
 		matches = 0
 		self.details.each do |detail|
 			if property.details.include?(detail)
