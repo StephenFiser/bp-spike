@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'devise'
 gem 'active_model_serializers'
+gem 'angularjs-rails'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do
