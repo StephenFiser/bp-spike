@@ -4,14 +4,10 @@ BpSpike::Application.routes.draw do
   root to: 'listings#index'
 
   namespace :api, constraints: { format: 'json' } do
-    resources :properties
+    namespace :v1 do
+      resources :properties
+    end
   end
-
-  # resources :properties, :defaults => {:format => :json}
-
-  # namespace :api, :defaults => {:format => :json} do
-  #   resources :properties
-  # end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
