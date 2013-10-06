@@ -2,7 +2,7 @@ class API::V1::PropertiesController < ApplicationController
 	def index
 		@properties = Property.all
 		 respond_to do |format|
-	      format.json { render :json => @properties }
+	      format.json { render json: @properties }
 	    end
 	end
 end
