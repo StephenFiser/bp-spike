@@ -1,5 +1,19 @@
 BpSpike::Application.routes.draw do
   devise_for :users
+
+  root to: 'listings#index'
+
+  namespace :api, constraints: { format: 'json' } do
+    resources :properties
+  end
+
+  # resources :properties, :defaults => {:format => :json}
+
+  # namespace :api, :defaults => {:format => :json} do
+  #   resources :properties
+  # end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
