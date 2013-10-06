@@ -3,7 +3,7 @@ BpSpike::Application.routes.draw do
 
   root to: 'listings#index'
 
-  namespace :api, constraints: { format: 'json' } do
+  namespace :api do
     namespace :v1 do
       resources :properties
     end
