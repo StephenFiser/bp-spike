@@ -15,7 +15,9 @@ class API::V1::PropertiesController < ApplicationController
 	end
 
 	def update
-		respond_with Property.update(params[:id], params[:property])
+		property = Property.find(params[:id])
+		property.update(property_params)
+		respond_with :api, :v1, property
 	end
 
 	def destroy
