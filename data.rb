@@ -10,6 +10,7 @@ white_house = Property.create(
 		status: "For Sale",
 		year_constructed: "1800",
 		days_since_listed: "56",
+		details: ["Swimming Pool", "Big Backyard", "Pet Friendly", "Charming"]
 	)
 loft = Property.create(
 		property_type: "Apartment",
@@ -22,6 +23,7 @@ loft = Property.create(
 		status: "For Sale",
 		year_constructed: "2010",
 		days_since_listed: "56",
+		details: ["Downtown", "Recently Built", "Open Floor Plan"]
 	)
 stephen.properties << white_house
 stephen.properties << loft

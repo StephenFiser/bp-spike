@@ -143,7 +143,7 @@ p {
 	float: none;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	/*border-radius: 10px;*/
+	border-radius: 6px;
 	background-color: $superLight;
 	&:hover {
 		background-color: white;
@@ -189,7 +189,7 @@ p {
 	float: none;
 	margin-top: -11px;
 	margin-bottom: 10px;
-	/*border-radius: 10px;*/
+	border-radius: 6px;
 	background-color: $superLight;
 	&:hover {
 		background-color: white;
@@ -235,7 +235,7 @@ p {
 	padding: 10px;
 	margin: 10px;
 	margin-top: 0px;
-	/*border-radius: 10px;*/
+	border-radius: 6px;
 	background-color: $superLight;
 	&:hover {
 		background-color: white;
@@ -243,4 +243,9 @@ p {
 	border: 1px solid $grayLight;
 	height: 500px;
 	width: 200px;
+	li { list-style: none; }
+	input[type="checkbox"] {
+		float: left;
+		margin-right: 10px;
+	}
 }

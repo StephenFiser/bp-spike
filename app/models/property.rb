@@ -1,7 +1,7 @@
 class Property < ActiveRecord::Base
 	belongs_to :user
 	has_one :location
-	has_many :details
+	serialize :details
 
 	def how_similar? property
 		matches = 0

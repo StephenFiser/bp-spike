@@ -3,6 +3,16 @@ angular.module('bp-spike').controller("ListingsCtrl", ['$scope', 'Property', fun
 
 	$scope.show = false;
 	$scope.ml = "More";
+	$scope.checkTest = 0;
+	$scope.filterDetails = [];
+	$scope.currentDetail = null;
+
+	$scope.details = [{title: "Swimming Pool", checked: false}, {title: "Big Backyard", checked:false}, 
+	{title: "Open Floor Plan", checked: false}, {title: "Downtown", checked: false}, {title: "Suburbs", checked: false}, 
+	{title: "Pet Friendly", checked: false}, {title: "Charming", checked: false}, 
+	{title: "Recently Built", checked: false}];
+
+	$scope.simpleDetails = [];
 
 	$scope.data = Property.query({}, function(response) {
 		console.log(response);
@@ -21,6 +31,19 @@ angular.module('bp-spike').controller("ListingsCtrl", ['$scope', 'Property', fun
 
 	}
 
+	$scope.detailFilter = function(property) {
+		if ($scope.checkTest > 0) {
+			console.log("Property details: " + property.details);
+			console.log("Filter details: " + $scope.filterDetails);
+			console.log(intersection(property.details, $scope.filterDetails));
+			if (intersection(property.details, $scope.filterDetails).length > 0) {
+				return property;
+			}
+		} else {
+			return property;
+		}
+	}
+
 	var setToFalse = function(set, index) {
 		$.each(set, function(i, obj) {
 			if (i != index) {
@@ -30,6 +53,35 @@ angular.module('bp-spike').controller("ListingsCtrl", ['$scope', 'Property', fun
 				}
 			}
 		});
+	}
+
+	function intersection(array1, array2) {
+		var intersection = []
+		$.each(array1, function(i, element) {
+			if ($.inArray(element, array2) > -1) {
+				intersection.push(element);
+			}
+		});
+		return intersection;
+	}
+
+	$scope.filterBy = function() {
+		$scope.filterDetails = [];
+		$scope.checkTest = 0;
+		$.each($scope.details, function(i, obj) {
+			if (obj.checked == true) {
+				$scope.checkTest++; 
+				$scope.filterDetails.push(obj.title);
+			}	
+		});
+	}
+
+	$scope.compare = function(a,b) {
+	  if (a.title < b.title)
+	     return -1;
+	  if (a.title > b.title)
+	    return 1;
+	  return 0;
 	}
 
 }]);

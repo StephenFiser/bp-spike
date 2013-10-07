@@ -1,8 +1,10 @@
 <div class="span1 sidebar">
-	jere isdf oif
+	<ul>
+		<li ng-repeat="detail in details.sort(compare)"><input type="checkbox" ng-click="filterBy()" ng-model="detail.checked">{{detail.title}}</li>
+	</ul>
 </div>
 
-<div ng-repeat="property in data.properties" class="row">
+<div ng-repeat="property in data.properties | filter:detailFilter" class="row">
 	<div class="span9 offset3 listing-overview">
 		<h3>{{property.title}}</h3>
 		<h5>{{property.description}}</h5>
