@@ -1,1 +1,246 @@
 @import 'bootstrap';
+/* colors and mixins*/
+
+/* blues */
+$teal: #0088cc;
+$aqua: #4FE9FF;
+
+/* oranges */
+$lightOrange: #FFD37E;
+$orange: #FFBB1D;
+$darkOrange: #D99F19;
+
+/* grays */
+$gray: #909090;
+$grayLight: #B8B8B8;
+$grayLighter: #e8e8e8;
+$darkGray: #333;
+$superLight: #f8f8f8;
+
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.gray {
+	color: $gray;
+}
+
+/* universal */
+
+html, body {font-family: 'Oxygen', sans-serif;}
+html { overflow-y: scroll; }
+body { padding-top: 60px; background-color: $grayLighter;}
+section { overflow: auto; }
+input[type="text"], input[type="password"], input[type="email"] { height: 25px; }
+textarea { resize: vertical; }
+.center { 
+	text-align: center;
+	h1{ margin-bottom: 10px; }
+}
+
+.move-up {
+	margin-top: -10px;
+}
+
+/* typography */
+#logo {
+	float: left;
+	margin-right: 10px;
+	font-size: 1.7em;
+	color: $aqua;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+	padding-top: 9px;
+	font-weight: lighter;
+	line-height: 1;
+}
+
+#logo:hover {
+	color: $aqua;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, { line-height: 1;}
+h1 { font-size: 3em; 
+	letter-spacing: -2px; 
+	margin-bottom: 30px; 
+}
+
+h2 { font-size: 1.7em; 
+	letter-spacing: -2px; 
+	margin-bottom: 30px; 
+	text-align: center; 
+	font-weight: normal; 
+	color: #999;
+}
+
+p {
+	font-size: 1.1em;
+	line-height: 1.7em;
+}
+
+.code {
+	font-family: Arial, sans-serif;
+	color: $teal;
+}
+
+/* buttons */
+
+.btn {
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	border-radius: 8px;
+	background-image: none;
+	background-repeat: none;
+	border-color: none;
+	filter: none;
+}
+
+.btn-primary {
+	color: $darkGray;
+	text-shadow: none;
+	background-color: white;
+}
+
+.btn-primary:hover {
+	color: $darkGray;
+	text-shadow: none;
+	background-color: $superLight;
+}
+
+/* header */
+
+.navbar .nav li {
+	border-left: 1px solid $gray;
+	&:hover {
+		background-color: #3a3a3a;
+	}
+	a {
+		color: $grayLighter;
+		text-shadow: none;
+		&:hover {
+			color: $orange;
+		}
+	}
+}
+
+.navbar-fixed-top .navbar-inner {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	background-image: none;
+	background-color: white;
+	border-bottom: 1px solid $grayLight;
+}
+
+
+
+/* listing index page */
+
+.listing-overview {
+	padding: 10px;
+	float: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	/*border-radius: 10px;*/
+	background-color: $superLight;
+	&:hover {
+		background-color: white;
+	}
+	&:first-child {
+		margin-top: 0px;
+	}
+	border: 1px solid $grayLight;
+	height: 65px;
+	.gray {
+		color: $gray;
+	}
+	h3, h5 {
+		margin-top: -3px;
+		margin-bottom: 8px;
+	}
+	a {
+		color: $orange;
+		&:hover {
+			text-decoration: none;
+			color: $lightOrange;
+		}
+	}
+	img {
+		margin-left: -8px;
+	}
+	p {
+		margin-top: -4px;
+		font-size: 12px;
+	}
+	.more {
+		float: right;
+		margin-top: -40px;
+		color: $darkGray;
+		&:hover {
+			color: black;
+		}
+	}
+}
+
+.listing-detail {
+	padding: 10px;
+	float: none;
+	margin-top: -11px;
+	margin-bottom: 10px;
+	/*border-radius: 10px;*/
+	background-color: $superLight;
+	&:hover {
+		background-color: white;
+	}
+	&:first-child {
+		margin-top: 0px;
+	}
+	border: 1px solid $grayLight;
+	height: 300px;
+	.gray {
+		color: $gray;
+	}
+	h3, h5 {
+		margin-top: -3px;
+		margin-bottom: 8px;
+	}
+	a {
+		color: $orange;
+		&:hover {
+			text-decoration: none;
+			color: $lightOrange;
+		}
+	}
+	img {
+		margin-left: -8px;
+	}
+	p {
+		margin-top: -4px;
+		font-size: 12px;
+	}
+	.more {
+		float: right;
+		margin-top: -40px;
+		color: $darkGray;
+		&:hover {
+			color: black;
+		}
+	}
+}
+
+.sidebar {
+	position: fixed;
+	padding: 10px;
+	margin: 10px;
+	margin-top: 0px;
+	/*border-radius: 10px;*/
+	background-color: $superLight;
+	&:hover {
+		background-color: white;
+	}
+	border: 1px solid $grayLight;
+	height: 500px;
+	width: 200px;
+}

@@ -1,5 +1,21 @@
-<h4>All Properties</h4>
+<div class="span1 sidebar">
+	jere isdf oif
+</div>
 
-<ul ng-repeat="property in data.properties">
-	<li>{{property.title}}</li>
-</ul>
+<div ng-repeat="property in data.properties" class="row">
+	<div class="span9 offset3 listing-overview">
+		<h3>{{property.title}}</h3>
+		<h5>{{property.description}}</h5>
+		<p>
+		  Posted by <span class="gray">{{property.user.first_name}}</span> 
+		</p>
+		<a class="btn more" ng-click="toggleShowHide($index)">{{property.ml}}</a>
+	</div>
+	<div ng-show="property.show" class="span9 offset3 listing-detail">
+		<h3>{{property.property_type}}</h3>
+		<h5>${{property.price}}</h5>
+		<p>{{property.bedrooms}} Bedrooms</p>
+		<p>{{property.bathrooms}} Bathrooms</p>
+		<p>{{property.status}}</p>
+	</div>
+</div>

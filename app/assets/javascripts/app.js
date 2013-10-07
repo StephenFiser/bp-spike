@@ -19,3 +19,8 @@ app.config(function($routeProvider) {
 app.factory('Property', ['$resource', function($resource) {
 	return $resource('/api/v1/properties/:id', {id: '@id'}, {'query':  {method:'GET', isArray:false}});
 }]);
+
+
+
+
+
